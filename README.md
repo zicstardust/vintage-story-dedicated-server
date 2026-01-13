@@ -18,7 +18,7 @@
 
 ## Usage
 ### Compose
-```
+``` yml
 services:
   vsserver:
     container_name: vintage-story-server
