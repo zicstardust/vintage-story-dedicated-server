@@ -58,11 +58,11 @@ rm -f ${FILENAME:-vs_server_linux-x64_}${VERSION}.tar.gz
 
 #install dotnet (or mono)
 if awk "BEGIN {exit !($VERSION <= 1.17.12)}"; then
-    DOTNET_VERSION="mono" /download_dotnet.sh
+    DOTNET_VERSION="mono" download_dotnet.sh
 elif awk "BEGIN {exit !($VERSION <= 1.20.12)}"; then
-    DOTNET_VERSION="7.0.20" /download_dotnet.sh
+    DOTNET_VERSION="7.0.20" download_dotnet.sh
 else
-    /download_dotnet.sh
+    download_dotnet.sh
 fi
 
 exit 0

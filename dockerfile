@@ -5,9 +5,9 @@ ENV DEBIAN_FRONTEND="noninteractive"
 WORKDIR /app
 
 COPY entrypoint.sh /entrypoint.sh
-COPY src/* /
+COPY src/* /usr/local/bin/
 
-RUN chmod +x /*.sh; \
+RUN chmod -R +x /usr/local/bin/* /entrypoint.sh; \
 	apt-get update; \
     apt-get install -y gosu jq wget; \
     apt-get -y autoremove; \
@@ -21,4 +21,4 @@ VOLUME [ "/data" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
-CMD [ "/run.sh" ]
+CMD [ "run.sh" ]

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-/download_server.sh
+#Download Server
+download_server.sh
 
 if [ $? != 0 ]; then
     exit $?
