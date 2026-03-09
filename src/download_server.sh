@@ -59,10 +59,16 @@ rm -f ${FILENAME}${VERSION}.tar.gz
 
 
 #install dotnet (or mono)
+#1.17.12 - Latest version with mono
+#1.20.12 - Latest version with .NET 7
+#1.21.X - .NET 8
+#1.22.X - .NET 10
 if awk "BEGIN {exit !($VERSION <= 1.17.12)}"; then
     DOTNET_VERSION="mono" download_dotnet.sh
 elif awk "BEGIN {exit !($VERSION <= 1.20.12)}"; then
     DOTNET_VERSION="7.0.20" download_dotnet.sh
+elif [[ "$VERSION" == 1.21* ]]; then
+    DOTNET_VERSION="8.0.24" download_dotnet.sh
 else
     download_dotnet.sh
 fi
