@@ -21,7 +21,7 @@ RUN chmod -R +x /usr/local/bin/* /entrypoint.sh; \
     apt-get -y autoremove; \
 	apt-get -y autoclean; \
 	apt-get -y clean; \
-	rm -Rf /var/lib/apt/lists/* \
+	rm -Rf /var/lib/apt/lists/*; \
 	\
 	sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen; \
 	locale-gen
