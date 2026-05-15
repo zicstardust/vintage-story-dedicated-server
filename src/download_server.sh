@@ -68,7 +68,7 @@ if awk "BEGIN {exit !($VERSION <= 1.17.12)}"; then
 elif awk "BEGIN {exit !($VERSION <= 1.20.12)}"; then
     DOTNET_VERSION="7.0.20" download_dotnet.sh
 elif [[ "$VERSION" == 1.21* ]]; then
-    DOTNET_VERSION="8.0.24" download_dotnet.sh
+    DOTNET_VERSION="8.0.27" download_dotnet.sh
 else
     download_dotnet.sh
 fi
