@@ -12,12 +12,13 @@ set -e
 : "${PUID:=1000}"
 : "${PGID:=1000}"
 
-if ! getent group vintagestory >/dev/null; then
-    groupadd -g "$PGID" vintagestory
+if [ "$(id -g vintagestory)" != "${PGID}" ]; then
+    groupmod -o -g "${PGID}" vintagestory
 fi
 
-if ! id -u vintagestory >/dev/null 2>&1; then
-    useradd -m -u "$PUID" -g "$PGID" -s /sbin/nologin vintagestory
+
+if [ "$(id -u vintagestory)" != "${PUID}" ]; then
+    usermod -o -u "${PUID}" vintagestory
 fi
 
 mkdir -p /data

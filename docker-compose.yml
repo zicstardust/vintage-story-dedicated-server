@@ -1,9 +1,11 @@
 services:
   app:
     container_name: vintage_story_dedicated_server
-    image: vintage_story_dedicated_server:latest
+    image: vintage_story_dedicated_server:debian
     restart: unless-stopped
-    build: .
+    build:
+      dockerfile: Dockerfile
+      context: .
     env_file: .env
     #tty: true
     #stdin_open: true

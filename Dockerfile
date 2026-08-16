@@ -23,6 +23,10 @@ RUN chmod -R +x /usr/local/bin/* /entrypoint.sh; \
 	apt-get -y clean; \
 	rm -Rf /var/lib/apt/lists/*; \
 	\
+	groupadd -g 1000 vintagestory; \
+	useradd -m -u 1000 -g 1000 -s /sbin/nologin vintagestory; \
+	mkdir -p /home/vintagestory; \
+	\
 	sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen; \
 	locale-gen
 

@@ -7,7 +7,7 @@
 
 | Tag | Architecture | Description |
 | :----: | :----: | :----: |
-| [`latest`](https://github.com/zicstardust/vintage-story-dedicated-server/blob/main/dockerfile) | amd64 | Dedicated Server |
+| [`latest`, `debian`](https://github.com/zicstardust/vintage-story-dedicated-server/blob/main/Dockerfile) | amd64 | Dedicated Server debian base |
 
 ### Registries
 | Registry | Full image name | Description |
