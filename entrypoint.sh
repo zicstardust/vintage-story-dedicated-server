@@ -23,6 +23,6 @@ fi
 
 mkdir -p /data
 
-chown -R vintagestory:vintagestory /app /data
+chown -R vintagestory:vintagestory /app /data /home/vintagestory
 
 exec gosu vintagestory "$@"
