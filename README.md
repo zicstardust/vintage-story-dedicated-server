@@ -31,6 +31,9 @@ services:
     image: docker.io/zicstardust/vintage-story-dedicated-server:latest
     restart: unless-stopped
     environment:
+      PUID: 1000
+      PGID: 1000
+      VERSION: stable
       TZ: America/New_York
     ports:
       - 42420:42420/tcp #Default_Port
