@@ -7,9 +7,6 @@ on:
       - 'Dockerfile'
       - 'src/**'
       - 'entrypoint.sh'
-      - '.github/workflows/push-image-gh-io.yml'
-
-
 
 env:
   PLATAFORM_ARCH: linux/amd64
