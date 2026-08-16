@@ -1,15 +1,16 @@
 #!/bin/bash
 
-set -e
+DOTNET=$1
 
-: "${DOTNET_VERSION:=10.0.10}"
-
-
-if [ "$DOTNET_VERSION" == "mono" ]; then
-    echo "Downloading mono..."
+if [ "$DOTNET" == "mono" ]; then
+    echo "Downloading Mono..."
     apt-get update  &> /dev/null
     apt-get install -y mono-complete &> /dev/null
 else
+    echo "Get latest .NET Runtime version from ${DOTNET}..."
+    DOTNET_JSON=$(wget -qO- https://builds.dotnet.microsoft.com/dotnet/release-metadata/${DOTNET}/releases.json)
+    DOTNET_VERSION=$(echo "$DOTNET_JSON" | jq -r '."latest-release"')
+
     echo "Downloading .NET Runtime ${DOTNET_VERSION}..."
     apt-get update &> /dev/null
     apt-get install -y libc6 libgcc-s1 libgssapi-krb5-2 libicu76 libssl3 libstdc++6 zlib1g  &> /dev/null
