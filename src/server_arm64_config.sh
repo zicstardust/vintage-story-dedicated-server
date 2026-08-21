@@ -15,7 +15,7 @@ elif [[ "$VERSION" == 1.21* ]]; then
 elif [[ "$VERSION" == 1.22* ]]; then
     ARM64_PATCH_URL="${ARM64_PATCH_URL_BASE}/1.22.0/vs_server_linux-arm64_1.22.0.tar.gz"
 else
-    echo "ARM64 version not yet compatible with this container."
+    echo "ERROR: ARM64 version not yet compatible with this container."
     exit 1
 fi
 

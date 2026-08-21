@@ -27,7 +27,7 @@ CONTAINER_ARCH=$(uname -m)
 
 if [ "$CONTAINER_ARCH" = "aarch64" ]; then
     if awk "BEGIN {exit !($VERSION < 1.18.15)}"; then
-        echo "Version $VERSION is not compatible with ARM64; please run version 1.18.0 or higher."
+        echo "ERROR: Version $VERSION is not compatible with ARM64; please run version 1.18.0 or higher."
         exit 1
     fi
 fi
