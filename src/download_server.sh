@@ -39,21 +39,18 @@ UNSTABLE_FULL_URL="${UNSTABLE_URL}${VERSION}.tar.gz"
 
 if wget --spider -q "$STABLE_FULL_URL" 2>/dev/null; then
     DOWNLOAD_URL="$STABLE_FULL_URL"
-    FILENAME="vs_server_linux-x64_"
     echo "Downloading Vintage Story Server version ${VERSION} from stable..."
     if [ "$VERSION" != "$LATEST_STABLE" ]; then
         echo "NOTE: You are running stable version ${VERSION} but version ${LATEST_STABLE} is available!"
     fi
 elif wget --spider -q "$UNSTABLE_FULL_URL" 2>/dev/null; then
     DOWNLOAD_URL="$UNSTABLE_FULL_URL"
-    FILENAME="vs_server_linux-x64_"
     echo "Downloading Vintage Story Server version ${VERSION} from unstable..."
     if [ "$VERSION" != "$LATEST_UNSTABLE" ]; then
         echo "NOTE: You are running unstable version ${VERSION} but version ${LATEST_UNSTABLE} is available!"
     fi
 elif wget --spider -q "$LEGACY_STABLE_FULL_URL" 2>/dev/null; then
     DOWNLOAD_URL="$LEGACY_STABLE_FULL_URL"
-    FILENAME="vs_archive_"
     echo "Downloading Vintage Story Server version ${VERSION} from legacy stable..."
 else
     echo "ERROR: Version ${VERSION} not found in either stable or unstable channels"
@@ -61,9 +58,9 @@ else
 fi
 
 
-wget -q "$DOWNLOAD_URL"
-tar xzf ${FILENAME}${VERSION}.tar.gz
-rm -f ${FILENAME}${VERSION}.tar.gz
+wget -q "$DOWNLOAD_URL" -O "vs_server_linux.tar.gz"
+tar xzf vs_server_linux.tar.gz
+rm -f vs_server_linux.tar.gz
 
 
 if [ "$CONTAINER_ARCH" = "aarch64" ]; then
