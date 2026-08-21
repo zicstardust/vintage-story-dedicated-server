@@ -37,6 +37,7 @@ services:
       TZ: America/New_York
     ports:
       - 42420:42420/tcp #Default_Port
+      - 42420:42420/udp #Default_Port
     volumes:
       - <path to data>:/data
 ```

@@ -31,6 +31,7 @@ RUN chmod -R +x /usr/local/bin/* /entrypoint.sh; \
 	locale-gen
 
 EXPOSE 42420/tcp
+EXPOSE 42420/udp
 
 VOLUME [ "/data" ]
 
