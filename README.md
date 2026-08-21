@@ -30,6 +30,8 @@ services:
     container_name: vintage-story-server
     image: docker.io/zicstardust/vintage-story-dedicated-server:latest
     restart: unless-stopped
+    tty: true
+    stdin_open: true
     environment:
       TZ: America/New_York
       PUID: 1000
@@ -42,7 +44,7 @@ services:
       - <path to data>:/data
 ```
 
-### Environment variables
+#### Environment variables
 
 | variables | Function | Default |
 | :----: | --- | --- |
@@ -52,10 +54,16 @@ services:
 | `VERSION` | Set server version | stable |
 
 
-### Set VERSION
+#### Set VERSION
 | Value | Function |
 | :----: | --- |
 | `stable` | Latest stable version |
 | `unstable` | Latest unstable version |
 | [`x.x.x`](https://api.vintagestory.at/stable.json) | Exemple any stable version |
 | [`x.x.x-rc.x`](https://api.vintagestory.at/unstable.json) | Exemple any unstable version |
+
+
+### Open console to execute commands
+``` sh
+docker attach vintage-story-server
+```
