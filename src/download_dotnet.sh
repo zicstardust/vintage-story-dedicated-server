@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 DOTNET=$1
-ARCH=$2
+DOTNET_ARCH=$2
 
-if [ "$DOTNET" == "aarch64" ]; then
+if [ "$DOTNET_ARCH" == "aarch64" ]; then
     DOTNET_ARCH="arm64"
 else
     DOTNET_ARCH="x64"
