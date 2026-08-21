@@ -23,9 +23,9 @@ else
     apt-get install -y libc6 libgcc-s1 libgssapi-krb5-2 libicu76 libssl3 libstdc++6 zlib1g tzdata  &> /dev/null
     mkdir -p /opt/dotnet
     cd /opt/dotnet
-    wget -q https://builds.dotnet.microsoft.com/dotnet/Runtime/${DOTNET_VERSION}/dotnet-runtime-${DOTNET_VERSION}-linux-${DOTNET_ARCH}.tar.gz
-    tar xf dotnet-runtime-${DOTNET_VERSION}-linux-${DOTNET_ARCH}.tar.gz
-    rm -f dotnet-runtime-${DOTNET_VERSION}-linux-${DOTNET_ARCH}.tar.gz
+    wget -q https://builds.dotnet.microsoft.com/dotnet/Runtime/${DOTNET_VERSION}/dotnet-runtime-${DOTNET_VERSION}-linux-${DOTNET_ARCH}.tar.gz -O "dotnet-runtime-linux.tar.gz"
+    tar xzf dotnet-runtime-linux.tar.gz
+    rm -f dotnet-runtime-linux.tar.gz
     ln -s /opt/dotnet/dotnet /usr/local/bin/dotnet
     cd /app
 fi
