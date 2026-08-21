@@ -23,6 +23,14 @@ elif [ "$VERSION" == "unstable" ]; then
     VERSION="$LATEST_UNSTABLE"
 fi
 
+$CONTAINER_ARCH=$(uname -m)
+
+if [ "$CONTAINER_ARCH" = "aarch64" ]; then
+    if awk "BEGIN {exit !($VERSION < 1.18.15)}"; then
+        echo "Version $VERSION is not compatible with ARM64; please run version 1.18.0 or higher."
+        exit 1
+    fi
+fi
 
 LEGACY_STABLE_FULL_URL="${LEGACY_STABLE_URL}${VERSION}.tar.gz"
 STABLE_FULL_URL="${STABLE_URL}${VERSION}.tar.gz"
@@ -58,19 +66,23 @@ tar xzf ${FILENAME}${VERSION}.tar.gz
 rm -f ${FILENAME}${VERSION}.tar.gz
 
 
+if [ "$CONTAINER_ARCH" = "aarch64" ]; then
+    server_arm64_config.sh $VERSION
+fi
+
 #install dotnet (or mono)
 #1.17.12 - Mono
 #1.20.12 - .NET 7
 #1.21.X - .NET 8
 #1.22.X - .NET 10
 if awk "BEGIN {exit !($VERSION <= 1.17.12)}"; then
-    download_dotnet.sh "mono"
+    download_dotnet.sh "mono" $CONTAINER_ARCH
 elif awk "BEGIN {exit !($VERSION <= 1.20.12)}"; then
-    download_dotnet.sh "7.0"
+    download_dotnet.sh "7.0" $CONTAINER_ARCH
 elif [[ "$VERSION" == 1.21* ]]; then
-    download_dotnet.sh "8.0"
+    download_dotnet.sh "8.0" $CONTAINER_ARCH
 else
-    download_dotnet.sh "10.0"
+    download_dotnet.sh "10.0" $CONTAINER_ARCH
 fi
 
 exit 0

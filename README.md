@@ -5,15 +5,16 @@
 ## Container
 ### Tags
 
-| Tag | Architecture | Description |
-| :----: | :----: | :----: |
-| [`latest`](https://github.com/zicstardust/vintage-story-dedicated-server/blob/main/Dockerfile) | amd64 | Dedicated Server |
+| Tag | Description |
+| :----: | :----: |
+| [`latest`](https://github.com/zicstardust/vintage-story-dedicated-server/blob/main/Dockerfile) | Dedicated Server |
 
 ### Supported Architectures
 
 | Architecture | Available |
 | :----: | :----: |
 | amd64 | ✅ |
+| arm64 | ✅ |
 
 ### Registries
 | Registry | Full image name | Description |
