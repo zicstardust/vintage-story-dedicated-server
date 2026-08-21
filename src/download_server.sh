@@ -23,7 +23,7 @@ elif [ "$VERSION" == "unstable" ]; then
     VERSION="$LATEST_UNSTABLE"
 fi
 
-$CONTAINER_ARCH=$(uname -m)
+CONTAINER_ARCH=$(uname -m)
 
 if [ "$CONTAINER_ARCH" = "aarch64" ]; then
     if awk "BEGIN {exit !($VERSION < 1.18.15)}"; then
