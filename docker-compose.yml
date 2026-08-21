@@ -1,7 +1,7 @@
 services:
   app:
-    container_name: vintage_story_dedicated_server
-    image: vintage_story_dedicated_server:latest
+    container_name: vintage-story-dedicated-server
+    image: vintage-story-dedicated-server:latest
     restart: unless-stopped
     build:
       dockerfile: Dockerfile
