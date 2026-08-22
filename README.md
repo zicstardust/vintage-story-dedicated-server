@@ -1,4 +1,5 @@
 # Vintage Story Dedicated Server 
+[GitHub](https://github.com/zicstardust/vintage-story-dedicated-server)
 
 ## Features
 - Supports any version (stable, unstable, or legacy)
@@ -6,8 +7,6 @@
 - Supports legacy version (1.17.12 or earlier)
 - Supports all unstable versions
 - Native AMD64 and ARM64 support (no emulation)
-
-[GitHub](https://github.com/zicstardust/vintage-story-dedicated-server)
 
 ## Container
 ### Tags
