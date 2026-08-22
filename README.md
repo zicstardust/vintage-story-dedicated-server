@@ -2,11 +2,11 @@
 [GitHub](https://github.com/zicstardust/vintage-story-dedicated-server)
 
 ## Features
-- Supports any version (stable, unstable, or legacy)
-- Automatically update the version (simply restart the container)
-- Supports legacy version (1.17.12 or earlier)
-- Supports all unstable versions
-- Native AMD64 and ARM64 support (no emulation)
+- Compatible any version released to date (stable, unstable, or legacy)
+- Update the version automatically (simply restart the container)
+- Compatible with legacy [Mono] versions (1.17.12 or earlier)
+- Compatible all unstable versions
+- Native AMD64 and ARM64 (no emulation)
 
 ## Container
 ### Tags
