@@ -1,12 +1,11 @@
 # Vintage Story Dedicated Server 
 
 ## Features
-
+- Supports any version (stable, unstable, or legacy)
 - Automatically update the version (simply restart the container)
 - Supports legacy version (1.17.12 or earlier)
 - Supports all unstable versions
-- Native ARM64 support (no emulation)
-- Native AMD64 support (no emulation)
+- Native AMD64 and ARM64 support (no emulation)
 
 [GitHub](https://github.com/zicstardust/vintage-story-dedicated-server)
 
